@@ -1,4 +1,4 @@
-### Django Dockerized Project
+# Django Dockerized Project
 
 This project demonstrates the setup and Dockerization of a Django web application. The goal is to check the running application on the public IP using Nginx as a reverse proxy. Then the application will be containerized and pushed to the Docker Hub for easy deployment.
 
@@ -11,16 +11,13 @@ This project demonstrates the setup and Dockerization of a Django web applicatio
 
 ## Steps of Implementation
 
-# Step 1: Create a new Django project
-
-    ```bash
+### Step 1: Create a new Django project
     pip install django
     django-admin startproject myproject
     cd myproject
     python3 manage.py startapp myapp
-    ```
 
-# Step 2: Edit the Nginx configuration file for the Django project (e.g., /etc/nginx/sites-available/default)
+### Step 2: Edit the Nginx configuration file for the Django project (e.g., /etc/nginx/sites-available/default)
 
 1. Update the Nginx configuration file with the following content:
 
@@ -54,7 +51,7 @@ This project demonstrates the setup and Dockerization of a Django web applicatio
 
 4. Access the application on the `<Public_ip>` using a browser.
 
-# Step 3: Dockerize the Django app
+### Step 3: Dockerize the Django app
 
 1. Create a Dockerfile in the project root with the provided content.
 
@@ -78,7 +75,7 @@ This project demonstrates the setup and Dockerization of a Django web applicatio
     docker build -t myproject-image .
     ```
 
-# Step 4: Push Docker image to a registry
+### Step 4: Push Docker image to a registry
 
 3. Tag the image.
 
@@ -98,7 +95,7 @@ This project demonstrates the setup and Dockerization of a Django web applicatio
     docker push your-registry/myproject-image:latest
     ```
 
-# Step 5: Run Docker container and expose on port 8080
+### Step 5: Run Docker container and expose on port 8080
 
 1. Run the Docker container.
 
